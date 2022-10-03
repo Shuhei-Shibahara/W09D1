@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// console.log(\"PLEASE DONT CANCEL ME\")\n\nconst MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\nconst canvas = document.getElementById(\"game-canvas\");\nconst canvasContext = canvas.getContext(\"2d\");\n\n// window.MovingObject = MovingObject;\n\n//# sourceURL=webpack://asteroid/./src/index.js?");
+eval("// console.log(\"PLEASE DONT CANCEL ME\")\nconst MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\nconst canvas = document.getElementById(\"game-canvas\");\nconst canvasContext = canvas.getContext(\"2d\");\n\nwindow.canvasContext = canvasContext;\nwindow.MovingObject = MovingObject;\n\nconst mo = new MovingObject({\n  pos: [30, 30],\n  vel: [10, 10],\n  radius: 5,\n  color: \"#00FF00\"\n});\n\nmo.draw(canvasContext);\nconsole.log('Sanity Check!')\n\n//# sourceURL=webpack://asteroid/./src/index.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("// console.log(\"PLEASE DONT CANCEL ME\")\n\nconst MovingObject = __webpac
   \******************************/
 /***/ ((module) => {
 
-eval("function MovingObject (pos, vel, radius, color) {\n    this.pos = pos;\n    this.vel = vel;\n    this.radius = radius;\n    this.color = color;\n\n\n\n\n}\n\nMovingObject.prototype.draw = function(ctx) {\n    ctx.arc(this.pos[0], this.pos[1], this.radius, Math.PI*2);\n    ctx.fillStyle = this.color;\n    ctx.fill();\n\n}\n\nmodule.exports = MovingObject\n\n//# sourceURL=webpack://asteroid/./src/moving_object.js?");
+eval("function MovingObject (obj) {\n    this.pos = obj.pos;\n    this.vel = obj.vel;\n    this.radius = obj.radius;\n    this.color = obj.color;\n}\n\nMovingObject.prototype.draw = function(ctx) {\n    ctx.beginPath();\n    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, Math.PI*2, true);\n    ctx.fillStyle = this.color;\n    ctx.fill();\n}\n\n\n\nmodule.exports = MovingObject;\n\n//# sourceURL=webpack://asteroid/./src/moving_object.js?");
 
 /***/ })
 
