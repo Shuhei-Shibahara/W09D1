@@ -1,7 +1,6 @@
 const MovingObject = require("./moving_object.js");
 const Util = require("./utils.js");
 
-Util.inherits(Asteroid, MovingObject);
 
 function Asteroid(pos){
   this.color = '#FFC0CB';
@@ -9,5 +8,6 @@ function Asteroid(pos){
   this.pos = pos;
   this.vel = Util.randomVec(10);
 }
+Util.inherits(Asteroid, MovingObject);
 
 module.exports = Asteroid;

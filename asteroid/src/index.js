@@ -12,6 +12,8 @@ const mo = new MovingObject({
   color: "#00FF00"
 });
 
+const a = new Asteroid ([100,100])
+
 
 
 
@@ -21,4 +23,5 @@ window.addEventListener('DOMContentLoaded', function(){
     const canvas = document.getElementById("game-canvas");
     const canvasContext = canvas.getContext("2d");
     mo.draw(canvasContext);
+    a.draw(canvasContext);
 })
