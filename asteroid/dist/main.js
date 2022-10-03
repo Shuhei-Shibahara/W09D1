@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// console.log(\"PLEASE DONT CANCEL ME\")\nconst MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\nconst canvas = document.getElementById(\"game-canvas\");\nconst canvasContext = canvas.getContext(\"2d\");\n\nwindow.canvasContext = canvasContext;\nwindow.MovingObject = MovingObject;\n\nconst mo = new MovingObject({\n  pos: [30, 30],\n  vel: [10, 10],\n  radius: 5,\n  color: \"#00FF00\"\n});\n\nmo.draw(canvasContext);\nconsole.log('Sanity Check!')\n\n//# sourceURL=webpack://asteroid/./src/index.js?");
+eval("\nconst MovingObject = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\n\n\nconst mo = new MovingObject({\n  pos: [200, 200],\n  vel: [10, 10],\n  radius: 200,\n  color: \"#00FF00\"\n});\n\n\n\n\nwindow.addEventListener('DOMContentLoaded', function(){\n    const canvas = document.getElementById(\"game-canvas\");\n    const canvasContext = canvas.getContext(\"2d\");\n    mo.draw(canvasContext);\n})\n\n\n//# sourceURL=webpack://asteroid/./src/index.js?");
 
 /***/ }),
 
