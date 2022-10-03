@@ -1,6 +1,8 @@
 
 const MovingObject = require("./moving_object.js");
+const Asteroid = require("./asteroid.js")
 
+window.Asteroid = Asteroid;
 
 
 const mo = new MovingObject({
@@ -9,6 +11,8 @@ const mo = new MovingObject({
   radius: 200,
   color: "#00FF00"
 });
+
+
 
 
 

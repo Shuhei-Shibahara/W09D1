@@ -9,3 +9,5 @@ function Asteroid(pos){
   this.pos = pos;
   this.vel = Util.randomVec(10);
 }
+
+module.exports = Asteroid;
