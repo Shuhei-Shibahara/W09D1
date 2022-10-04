@@ -1,10 +1,8 @@
 const Asteroid = require("./asteroid")
 
 function Game(){
-  // const DIM_X =
-  // const DIM_Y = 
-  const asteroids = [];
-  const NUM_ASTEROIDS= asteroids.length
+  this.asteroids = [];
+
 
   this.addAsteroids();
   this.addAsteroids();
@@ -15,28 +13,34 @@ function Game(){
   this.addAsteroids();
   this.addAsteroids();
 }
+
+Game.DIM_X = 500;
+Game.DIM_Y = 500;
+Game.NUM_ASTEROIDS = this.asteroids.length;
 
 Game.prototype.addAsteroids = function(){
   const ast = new Asteroid(this.randomPosition())
-  asteroids.push(ast);
+  this.asteroids.push(ast);
 }
 
 Game.prototype.randomPosition = function(){
-  let x = Math.floor(Math.random() * (500 + 1));
-  let y = Math.floor(Math.random() * (500 + 1));
+  let x = Math.floor(Math.random() * (DIM_X + 1));
+  let y = Math.floor(Math.random() * (DIM_Y + 1));
   return [x,y]
 }
 
 Game.prototype.draw = function(ctx){
   ctx.clearRect();
 
-  asteroids.forEach((el) =>{
+  this.asteroids.forEach((el) =>{
     el.draw(ctx);
   });
 }
 
 Game.prototype.moveObjects = function() {
-  asteroids.forEach((el) => {
+  this.asteroids.forEach((el) => {
     el.move();
   });
 }
+
+module.exports = Game;
