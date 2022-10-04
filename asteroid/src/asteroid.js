@@ -4,7 +4,7 @@ const Util = require("./utils.js");
 
 function Asteroid(pos){
   this.color = '#FFC0CB';
-  this.radius = 50;
+  this.radius = 20;
   this.pos = pos;
   this.vel = Util.randomVec(10);
 }
